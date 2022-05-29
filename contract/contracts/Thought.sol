@@ -16,7 +16,6 @@ contract Thoughts{
     mapping(string => User) public users;
 
     function signup(string memory _username, string memory _name,string memory _bio,string memory _avatar) public {
-        
         require(bytes(usernames[msg.sender]).length == 0, "check");
         
         users[_username] = User({
