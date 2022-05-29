@@ -13,7 +13,7 @@ describe("thought", function () {
 
     expect(await thoughts.usernames(user1.address)).to.equal("abhi");
 
-    await expect(thoughts.signup("amo","Amo","amobio","amoavt")).to.be.revertedWith(
+    await expect(thoughts.signup("","","","")).to.be.revertedWith(
       "user already exist ewtgw"
     );
   
