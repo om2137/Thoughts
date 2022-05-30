@@ -17,9 +17,9 @@ async function main() {
   const Greeter = await hre.ethers.getContractFactory("Greeter");
   const greeter = await Greeter.deploy("Hello, Hardhat!");
 
-  await greeter.deployed();
+  await Thoughts.deployed();
 
-  console.log("Greeter deployed to:", greeter.address);
+  console.log("Thoughts deployed to:", thoughts.address);
 }
 
 // We recommend this pattern to be able to use async/await everywhere
