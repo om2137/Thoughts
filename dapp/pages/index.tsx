@@ -1,9 +1,10 @@
+import { create } from 'domain';
 import Head from 'next/head'
 import Button from '../components/Button'
 import useThoughts from '../hooks/useThoughts'
 
 export default function Home() {
-  const {connect, account} = useThoughts();
+  const {connect, account, user, createUser} = useThoughts();
   return (
     <div className="flex min-h-screen flex-col items-center justify-center py-2">
       <Head>
@@ -17,8 +18,13 @@ export default function Home() {
           Welcome to <span className="text-red-400">Thoughts</span>
         </h1>
 
-        {!account ?<Button label = "Connect to Etherum" onClick={connect} />
-        : <p className="text-red-400">Connected to : {account}</p>}
+        {!account ? (
+        <Button label = "Connect to Etherum" onClick={connect} />
+        ) : (
+          <Button 
+            label="SignUp" 
+            onClick={() => createUser('om', "OmRaut", "somebio","avatar" )}/>
+        ) }
       </main>
 
       <footer className="flex h-24 w-full items-center justify-center border-t">
