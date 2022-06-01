@@ -70,20 +70,26 @@ const useThoughts = () => {
         setCurrentUser({avatar, bio, name, username, wallet});
         return user;
     }
-
     const createUser = async (
         username: string,
         name: string,
         bio: string,
         avatar: string
     ) => {
-        const contract = getThoughtsContract();
-        const user = await contract.signup(username,name,bio,avatar);
-        console.log(user);
+    const contract = getThoughtsContract();
+        try{
+            const user = await contract.signup(username,name,bio,avatar);
+            console.log(user);
+        }catch(e){
+            console.error(e);
+        }
+            getUser();
     }
+    
+    
 
 
-    return {connect, account: currentAccount, user: createUser, createUser};
+    return {connect, account: currentAccount, user: currentUser, createUser};
 };
 
 export default useThoughts;

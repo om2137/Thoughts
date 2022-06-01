@@ -1,10 +1,13 @@
 import { create } from 'domain';
+import { Wallet } from 'ethers';
 import Head from 'next/head'
 import Button from '../components/Button'
+import SignUpForm from '../components/SignUpForm'
 import useThoughts from '../hooks/useThoughts'
 
 export default function Home() {
   const {connect, account, user, createUser} = useThoughts();
+  console.log(user);
   return (
     <div className="flex min-h-screen flex-col items-center justify-center py-2">
       <Head>
@@ -21,9 +24,10 @@ export default function Home() {
         {!account ? (
         <Button label = "Connect to Etherum" onClick={connect} />
         ) : (
-          <Button 
-            label="SignUp" 
-            onClick={() => createUser('om', "OmRaut", "somebio","avatar" )}/>
+          account.toUpperCase() !== user?.wallet.toUpperCase() ? (
+            <SignUpForm />
+          ): (
+          <p> Hi {user?.name}</p>)
         ) }
       </main>
 
@@ -38,5 +42,4 @@ export default function Home() {
     </div>
   )
 }
-
 
