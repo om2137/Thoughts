@@ -8,7 +8,7 @@ const SignUpForm = () => {
     const [name,setName] = useState('');
     const [bio,setBio] = useState('');
     const [avatar,setAvatar] = useState('');
-    
+    console.log(name);
     return(
         <div className='min-h-full flex items-center justify-to-center my-32'>
             <div className='max-w-md w-full space-y-8'>
@@ -41,10 +41,12 @@ const SignUpForm = () => {
                                 <input value={avatar} onChange={(e)=>setAvatar(e.target.value)}  type="text" autoComplete='none' required className='appearance-none py2 rounded relative block w-full px-3 
                                     border border-gray-300 placeholder-gray-300 text-gray-900 rounded-t-md mb-2
                                     focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm'placeholder='Avatar'/>
+                                    
                                 </div>
+                                
                                 <Button label='SignUp' onClick={() => 
                                     createUser(
-                                        JSON.stringify(usrname),JSON.stringify(name),JSON.stringify(bio),JSON.stringify(avatar),
+                                        JSON.stringify(usrname), JSON.stringify(name), JSON.stringify(bio), JSON.stringify(avatar),
                                     )
                                 }></Button>
                             </div>
@@ -55,7 +57,9 @@ const SignUpForm = () => {
                 </div>
             </div>
         </div>
+        
     )
     
 }
+
 export default SignUpForm

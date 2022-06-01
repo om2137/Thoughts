@@ -27,7 +27,7 @@ export default function Home() {
           account.toUpperCase() !== user?.wallet.toUpperCase() ? (
             <SignUpForm />
           ): (
-          <p> Hi {user?.name}</p>)
+          <p> Hi {user?.name}{user?.username}</p>)
         ) }
       </main>
 
