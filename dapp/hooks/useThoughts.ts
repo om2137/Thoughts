@@ -67,7 +67,7 @@ const useThoughts = () => {
         const Contract = getThoughtsContract();
         const user = await Contract.getUser(currentAccount);
         const {avatar, bio, name, username, wallet} = user;
-        setCurrentUser({avatar, bio, name, username, wallet});
+        setCurrentUser({ username, name, bio, avatar, wallet});
         return user;
     }
     const createUser = async (

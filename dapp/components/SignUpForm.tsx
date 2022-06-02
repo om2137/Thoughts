@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Button from '../components/Button'
 import useThoughts from '../hooks/useThoughts'
+import Image from 'next/image'
 
 const SignUpForm = () => {
     const { createUser} = useThoughts();
@@ -8,7 +9,7 @@ const SignUpForm = () => {
     const [name,setName] = useState('');
     const [bio,setBio] = useState('');
     const [avatar,setAvatar] = useState('');
-    console.log(name);
+    //console.log(name);
     return(
         <div className='min-h-full flex items-center justify-to-center my-32'>
             <div className='max-w-md w-full space-y-8'>
@@ -31,26 +32,31 @@ const SignUpForm = () => {
                                         focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm'placeholder='Name'/>
                                 </div>
                                 <div>
+                                    <label>Avatar:</label>
+                                    <input value={avatar} onChange={(e)=>setAvatar(e.target.value)}  type="text" autoComplete='none' required className='appearance-none py2 rounded relative block w-full px-3 
+                                        border border-gray-300 placeholder-gray-300 text-gray-900 rounded-t-md mb-2
+                                        focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm'placeholder='Avatar'/>
+                                    
+                                </div>
+                                <div>
                                     <label>Bio:</label>
                                     <input value={bio} onChange={(e)=>setBio(e.target.value)}  type="text" autoComplete='none' required className='appearance-none py2 rounded relative block w-full px-3 
                                         border border-gray-300 placeholder-gray-300 text-gray-900 rounded-t-md mb-2
                                         focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm'placeholder='Bio'/>
                                 </div>
                                 <div>
-                                    <label>Avatar:</label>
-                                <input value={avatar} onChange={(e)=>setAvatar(e.target.value)}  type="text" autoComplete='none' required className='appearance-none py2 rounded relative block w-full px-3 
-                                    border border-gray-300 placeholder-gray-300 text-gray-900 rounded-t-md mb-2
-                                    focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm'placeholder='Avatar'/>
-                                    
+                                    <label>IGNORE:</label>
+                                    <input type="text" autoComplete='none' required className='appearance-none py2 rounded relative block w-full px-3 
+                                        border border-gray-300 placeholder-gray-300 text-gray-900 rounded-t-md mb-2
+                                        focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm'placeholder='IGNORE'/>
                                 </div>
                                 
-                                <Button label='SignUp' onClick={() => 
+                            </div>
+                            <Button label='SignUp' onClick={() => 
                                     createUser(
-                                        JSON.stringify(usrname), JSON.stringify(name), JSON.stringify(bio), JSON.stringify(avatar),
+                                        usrname, name, bio, avatar
                                     )
                                 }></Button>
-                            </div>
-                            
                         </div> 
                     </form>
 
