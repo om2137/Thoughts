@@ -2,6 +2,6 @@
 
 will be updated soon
 
-## Deploy your own
+
 
 
