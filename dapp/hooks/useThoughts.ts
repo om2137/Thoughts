@@ -55,7 +55,7 @@ const useThoughts = () => {
             return;
         }
         connect();
-    }, []);   
+    }, [])   
 
     useEffect(() => {
         if(currentAccount){
@@ -79,7 +79,7 @@ const useThoughts = () => {
     const contract = getThoughtsContract();
         try{
             const user = await contract.signup(username,name,bio,avatar);
-            console.log(user);
+            //console.log(user);
         }catch(e){
             console.error(e);
         }

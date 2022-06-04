@@ -50,7 +50,6 @@ const SignUpForm = () => {
                                         border border-gray-300 placeholder-gray-300 text-gray-900 rounded-t-md mb-2
                                         focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm'placeholder='IGNORE'/>
                                 </div>
-                                
                             </div>
                             <Button label='SignUp' onClick={() => 
                                     createUser(

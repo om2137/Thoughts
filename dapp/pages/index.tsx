@@ -1,13 +1,15 @@
 import { create } from 'domain';
 import { Wallet } from 'ethers';
 import Head from 'next/head'
+import { useState } from 'react';
 import Button from '../components/Button'
 import SignUpForm from '../components/SignUpForm'
 import useThoughts from '../hooks/useThoughts'
 
 export default function Home() {
   const {connect, account, user, createUser} = useThoughts();
-  console.log(user);
+  //console.log(user);
+  const [thoughtContent, setThoughtContent] = useState<string>('');
   return (
     <div className="flex min-h-screen flex-col items-center justify-center py-2">
       <Head>
@@ -37,10 +39,10 @@ export default function Home() {
               </div>
             </div>
             <div className="flex item-center w-60 h-35">              
-              <textarea className='ml-2 rounded-xl border border-gray-600  w-64 pt-1 pl-2' placeholder='whats on your mind ' />
+              <textarea className='ml-2 rounded-xl border border-gray-600  w-64 pt-1 pl-2' placeholder='whats on your mind ' value={thoughtContent} onChange={e=>setThoughtContent(e.target.value)}/>
             </div>  
             <div className='mt-2 flex justify-end w-60'>
-              <Button label='free' onClick={() => (console.log('todo'))}/>
+              <Button label='free' onClick={() => (console.log(thoughtContent))}/>
             </div>  
             </>
         )  }

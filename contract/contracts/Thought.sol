@@ -11,6 +11,13 @@ contract Thoughts{
         string bio;
         string avatar;
     }
+    struct Thought{
+        address author;
+        string content;
+        uint timestamp;
+
+    }
+    Thought[] public thoughts;
 
     mapping(address => string) public usernames;
     mapping(string => User) public users;
@@ -33,5 +40,18 @@ contract Thoughts{
 
     function getUser(address _wallet) public view returns (User memory){
         return users[usernames[_wallet]];
+    }
+
+    function postThought(string memory _content) public {
+        require(bytes(usernames[msg.sender]).length > 0, "you must Signin first, to post thought");
+        require(bytes(_content).length > 0, "thought cannot be empty");
+        require(bytes(_content).length <= 200, "thought is too long."); 
+
+        Thought memory thought = Thought({
+            author: msg.sender,
+            content: _content,
+            timestamp: block.timestamp
+        });
+        thoughts.push(thought);
     }
 }

@@ -37,6 +37,9 @@ describe("thought", function () {
         .signup("om", "OmRaut", "some bio", "someUrlavt")
     ).to.be.revertedWith("Username is taken, please try another one");
     console.log("test user already exists error");
-  
+
+    await thoughts.postThought("hello world");
+    expect((await thoughts.thoughts(0)).content).to.equal("hello world");
+    //console.log(thought);
   });
 });
