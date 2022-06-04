@@ -54,4 +54,8 @@ contract Thoughts{
         });
         thoughts.push(thought);
     }
+
+    function getThoughts() public view returns (Thought[] memory){
+        return thoughts;
+    }
 }

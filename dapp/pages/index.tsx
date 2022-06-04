@@ -31,19 +31,22 @@ export default function Home() {
             <SignUpForm />
           ): (
             <>
-            <div className='flex items-center w-40 pb-8'>
+            <div className='flex items-center justify-center w-80 pb-6'>
               <img src={user?.avatar}  className="rounded-full h-16 w-16 mr-2" />
               <div className='flex flex-col justify-start'>
-                <span>{user?.name}</span>
+                <span className='flex flex-col text-left'>{user?.name}</span>
                 <span className='text-sm text-gray-400 text-left'>@{user?.username}</span>
               </div>
             </div>
-            <div className="flex item-center w-60 h-35">              
-              <textarea className='ml-2 rounded-xl border border-gray-600  w-64 pt-1 pl-2' placeholder='whats on your mind ' value={thoughtContent} onChange={e=>setThoughtContent(e.target.value)}/>
-            </div>  
-            <div className='mt-2 flex justify-end w-60'>
-              <Button label='free' onClick={() => (console.log(thoughtContent))}/>
-            </div>  
+            <div className='item-center justify-center  w-80 pl-12'>
+              <div className="flex item-center w-60 ">              
+                <textarea className='ml-2 rounded-xl border border-gray-600  w-64 pt-1 pl-2' placeholder='whats on your mind ' value={thoughtContent} onChange={e=>setThoughtContent(e.target.value)}/>
+              </div>  
+              <div className='mt-2 flex justify-end w-60 pl-4'>
+                <Button label='free' onClick={() => (console.log(thoughtContent))}/>
+              </div>  
+            </div>
+            
             </>
         )  }
       </main>

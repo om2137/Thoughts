@@ -40,6 +40,10 @@ describe("thought", function () {
 
     await thoughts.postThought("hello world");
     expect((await thoughts.thoughts(0)).content).to.equal("hello world");
-    //console.log(thought);
+    console.log("test postThought is successful");
+
+    const thought = await thoughts.getThoughts();
+    expect((await thought[0]).content).to.equal("hello world");
+    console.log("test getThoughts is successful");
   });
 });
