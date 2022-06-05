@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { create } from 'domain';
 
 const ContractAbi = Thoughts.abi;
-const ContractAddress = '0x5FbDB2315678afecb367f032d93F642f64180aa3';
+const ContractAddress = '0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512';
 const Ethereum = typeof window !== 'undefined' && (window as any).ethereum;
 
 const getThoughtsContract = () => {
@@ -24,11 +24,17 @@ type User = {
     username : string;
     wallet : string;
 }
-
+type Thought = {
+    content: string;
+    timestamp: number;
+    author: string;
+}
 const useThoughts = () => {
-    // const Thoughts = getThoughtsContract();
+    
     const [currentAccount, setCurrentAccount] = useState<string>('');
+    const [thoughts, setThoughts] = useState<Thought[]>([]);
     const [currentUser, setCurrentUser] = useState<User | null>(null);
+
     const connect = async () => {
         try{
             if(!Ethereum){
@@ -54,12 +60,13 @@ const useThoughts = () => {
             console.log('No ethereum wallets found, please get metamask');
             return;
         }
-        connect();
+        connect(); 
     }, [])   
 
     useEffect(() => {
         if(currentAccount){
             getUser();
+            getThoughts();
         }        
     },[currentAccount])
 
@@ -86,10 +93,26 @@ const useThoughts = () => {
             getUser();
     }
     
-    
+    const postThought = async (thought: string) => {
+        try{
+            const contract = getThoughtsContract();
+            await contract.postThought(thought);
+        }catch(e){
+            console.error(e);
+        }
+        
+        await getThoughts();
+    };
 
+    const getThoughts = async () => {
+        const contract = getThoughtsContract();
+        const thoughts = await contract.getThoughts();
+        console.log(thoughts);
+        setThoughts(thoughts);
 
-    return {connect, account: currentAccount, user: currentUser, createUser};
+    }
+
+    return {connect, account: currentAccount, user: currentUser, createUser, postThought, thoughts};
 };
 
 export default useThoughts;

@@ -11,12 +11,12 @@ const SignUpForm = () => {
     const [avatar,setAvatar] = useState('');
     //console.log(name);
     return(
-        <div className='min-h-full flex items-center justify-to-center my-32'>
+        <div className='min-h-full flex items-center justify-to-center my-32 '>
             <div className='max-w-md w-full space-y-8'>
                 <div>
                     <h2 className='mt-6 text-center text-4xl font-bold text-gray-900'>Fields</h2>
                     <form className='mt-4 space-y-2' >
-                        <div className='rounded-md shadow-sm -space-y-px'>
+                        <div className='rounded-md shadow-sm -space-y-px '>
                             <div>
                                 <div className="mb-3 xl:w-96">
                                     <label>@username:</label>
@@ -50,12 +50,12 @@ const SignUpForm = () => {
                                         border border-gray-300 placeholder-gray-300 text-gray-900 rounded-t-md mb-2
                                         focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm'placeholder='IGNORE'/>
                                 </div>
-                            </div>
-                            <Button label='SignUp' onClick={() => 
+                                <Button label='SignUp' onClick={() => 
                                     createUser(
                                         usrname, name, bio, avatar
-                                    )
-                                }></Button>
+                                )}/>
+                            </div>
+                            
                         </div> 
                     </form>
 
