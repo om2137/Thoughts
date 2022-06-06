@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import Button from '../components/Button'
 import useThoughts from '../hooks/useThoughts'
-import Image from 'next/image'
 
 const SignUpForm = () => {
     const { createUser} = useThoughts();

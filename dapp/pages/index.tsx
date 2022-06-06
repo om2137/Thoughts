@@ -49,7 +49,7 @@ export default function Home() {
               </div>
               
               <div>
-                <div className='mt-2  bg-red-200 mr-8 rounded pt-1 pb-2'>
+                <div className='mt-2  bg-red-400 text-white mr-8 rounded pt-1 pb-2'>
                   {
                     thoughts.map(thought => (  
                       <span className='ml-3 mr-3'>
