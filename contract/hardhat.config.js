@@ -22,5 +22,11 @@ module.exports = {
     hardhat: {
       chainId: 1337
     },
+    rinkeby: {
+      url: "https://eth-rinkeby.alchemyapi.io/v2/dgZwAVPo_WbvWnmk_iW-jju7iBazyAP8",
+      accounts: [
+        "<your metamask private key>",//metamask account's private key
+      ],
+    }
   }
 };
