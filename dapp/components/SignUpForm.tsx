@@ -18,33 +18,33 @@ const SignUpForm = () => {
                         <div className='rounded-md shadow-sm -space-y-px '>
                             <div>
                                 <div className="mb-3 xl:w-96">
-                                    <label>@username:</label>
+                                    <label className='text-white'>@username:</label>
                                     <input value={usrname} onChange={(e)=>setUname(e.target.value)} type="text" autoComplete='none' required className='appearance-none py2 rounded relative block w-full px-3 
                                         border border-gray-300 placeholder-gray-300 text-gray-900 rounded-t-md mb-2
                                         focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm'placeholder='Username' />
                                 </div>
                                     
                                 <div className="mb-3 xl:w-96">
-                                    <label>Full Name:</label>
+                                    <label className='text-white'>Full Name:</label>
                                     <input value={name} onChange={(e)=>setName(e.target.value)}  type="text" autoComplete='none' required className='appearance-none py2 rounded relative block w-full px-3 
                                         border border-gray-300 placeholder-gray-300 text-gray-900 rounded-t-md mb-2
                                         focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm'placeholder='Name'/>
                                 </div>
                                 <div>
-                                    <label>Avatar:</label>
+                                    <label className='text-white'>Avatar:</label>
                                     <input value={avatar} onChange={(e)=>setAvatar(e.target.value)}  type="text" autoComplete='none' required className='appearance-none py2 rounded relative block w-full px-3 
                                         border border-gray-300 placeholder-gray-300 text-gray-900 rounded-t-md mb-2
                                         focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm'placeholder='Avatar'/>
                                     
                                 </div>
                                 <div>
-                                    <label>Bio:</label>
+                                    <label className='text-white'>Bio:</label>
                                     <input value={bio} onChange={(e)=>setBio(e.target.value)}  type="text" autoComplete='none' required className='appearance-none py2 rounded relative block w-full px-3 
                                         border border-gray-300 placeholder-gray-300 text-gray-900 rounded-t-md mb-2
                                         focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm'placeholder='Bio'/>
                                 </div>
                                 <div>
-                                    <label>IGNORE:</label>
+                                    <label className='text-white'>IGNORE:</label>
                                     <input type="text" autoComplete='none' required className='appearance-none py2 rounded relative block w-full px-3 
                                         border border-gray-300 placeholder-gray-300 text-gray-900 rounded-t-md mb-2
                                         focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm'placeholder='IGNORE'/>
