@@ -23,9 +23,9 @@ module.exports = {
       chainId: 1337
     },
     rinkeby: {
-      url: "rinkeby url",
+      url: "https://eth-rinkeby.alchemyapi.io/v2/dgZwAVPo_WbvWnmk_iW-jju7iBazyAP8",
       accounts: [
-        "<your metamask private key>",//metamask account's private key
+        "f43fa537e917b8dd210f5c95e197a8d5e4edd9c5d2a2c2c9f8cb2e4b7ff57f03",//metamask account's private key
       ],
     }
   }

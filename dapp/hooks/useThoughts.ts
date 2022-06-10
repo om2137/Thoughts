@@ -6,7 +6,7 @@ import { create } from 'domain';
 const ContractAbi = Thoughts.abi;
 //key of deployed contract should be changed accordingly.
 // const ContractAddress = '0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512'; //local network key
-const ContractAddress = '<your rinkeby network key>';//rinkeby network key
+const ContractAddress = '0xFa936d654fe8C1a89d607a94606E9E7b8114be17';//rinkeby network key
 const Ethereum = typeof window !== 'undefined' && (window as any).ethereum;
 
 const getThoughtsContract = () => {
