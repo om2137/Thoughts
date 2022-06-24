@@ -14,7 +14,6 @@ export default function Home() {
     <div className="flex min-h-screen flex-col items-center justify-center py-2 bg-gray-900">
       <Head>
         <title>Thoughts</title>
-        <link rel="icon" href="/favicon.ico" />
       </Head>
       
       
