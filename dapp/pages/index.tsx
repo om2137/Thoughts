@@ -19,7 +19,7 @@ export default function Home() {
       
       <main className="flex w-full flex-1 flex-col items-center justify-center px-20 ">
         <h1 className="mb-8 text-6xl font-bold text-center text-white">
-          Welcome to <span className="text-red-400">Thoughts</span>
+          Welcome to <span className="text-red-400">Thoughts!</span>
         </h1>
         {!account ? (
         <Button label = "Connect to Etherum" onClick={connect} />
