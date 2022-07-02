@@ -7,6 +7,7 @@ This is a very basic blockchain project, which is a short message(thought) shari
 Ethereum, Solidity, Hardhat, Waffle, Ethers.js, MetaMask, Next.js, Tailwind.css
 
 ## Setup locally
+will be updated soon.
 
 ## User flow
 live on: https://thoughts-iota.vercel.app/ (deployed on rinkeby test network).
