@@ -9,7 +9,7 @@ Ethereum, Solidity, Hardhat, Waffle, Ethers.js, MetaMask, Next.js, Tailwind.css
 ## Setup locally
 
 ## User flow
-user go to: https://thoughts-iota.vercel.app/ (deployed on rinkeby test network) or local host.
+live on: https://thoughts-iota.vercel.app/ (deployed on rinkeby test network).
 1) User connect MetaMask to thoughts.
 2) After proper connection user fill the details to make profile.
 3) Once details are filled it takes to home of Thoughts.
