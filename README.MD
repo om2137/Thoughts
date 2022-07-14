@@ -18,7 +18,7 @@ will be updated soon.
 
 ## User flow
 * live on: https://thoughts-iota.vercel.app/ (deployed on rinkeby test network).
-###Note: Choose rinkeby test network in metamask.
+### Note: Choose rinkeby test network in metamask.
 
 1) User connect MetaMask to thoughts.
 2) After proper connection user fill the details to make profile.
