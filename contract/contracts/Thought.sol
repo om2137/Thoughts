@@ -15,6 +15,7 @@ contract Thoughts{
     // constrains of message
     struct Thought{
         address author;
+        string authorName;
         string content;
         uint timestamp;
 
@@ -55,6 +56,7 @@ contract Thoughts{
         // create new message
         Thought memory thought = Thought({
             author: msg.sender,
+            authorName: usernames[msg.sender],
             content: _content,
             timestamp: block.timestamp
         });

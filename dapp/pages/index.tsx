@@ -5,6 +5,7 @@ import { useState } from 'react';
 import Button from '../components/Button'
 import SignUpForm from '../components/SignUpForm'
 import useThoughts from '../hooks/useThoughts'
+import MediaCard from '../components/Cards';
 
 export default function Home() {
   const {connect, account, user, createUser, postThought, thoughts} = useThoughts();
@@ -22,7 +23,7 @@ export default function Home() {
           </h1>
         </div>
       
-      <main className="flex w-full flex-1 flex-col items-center justify-top px-20 py-">
+      <main className="flex w-full flex-1 flex-col items-center justify-center px-20">
         
         <div className='item-center justify-center'>
           {!account ? (
@@ -32,10 +33,10 @@ export default function Home() {
               <SignUpForm />
             ): (
               <>
-              <div className='flex w-full flex-col pb-8 px-auto'>
+              <div className='flex w-full flex-col pb-4 px-auto'>
                 <div className=' flex item-center justify-center  w-120 '>
                   <div>
-                    <img src={user?.avatar}  className="rounded-full mr-2" width="170"/>
+                    <img src={user?.avatar}  className="rounded-full mr-2 aspect-square" width="170" height="170"/>
                   </div>
                   
                   <div className='pl-3 '>
@@ -67,18 +68,17 @@ export default function Home() {
               <div>
                 
               </div>
-              <div>
-                  <div className='mt-2  bg-red-400 text-white  rounded pt-1 '>
-                    {
-                      thoughts.map(thought => (  
-                        <span className='ml-3 mr-2'>
-                          {thought.content } <br />
-                        </span>
+              <div className='flex w-full flex-col mx-auto'>
+                <div className='flex flex-col justify-top ' >
+                  {
+                    thoughts.map(thought => (  
+                      <MediaCard Cardtitle={"@ "+ thought.authorName} Cardthought={thought.content} />
                         
-                      ))
-                    }
-                  </div>
+                    ))
+                  }
                 </div>
+              </div>  
+                
               </>
           ) }
         </div>
