@@ -44,6 +44,7 @@ describe("thought", function () {
 
     const thought = await thoughts.getThoughts();
     expect((await thought[0]).content).to.equal("hello world");
-    console.log("test getThoughts is successful");
+    console.log(thought[0].authorName);
+    console.log("test getThoughts is successful.");
   });
 });
