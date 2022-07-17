@@ -43,10 +43,10 @@ export default function MediaCard( { Cardtitle, Cardthought}: Props ) {
   return (
     <Card style={cardStyle} >
       <CardContent >
-        <Typography gutterBottom variant="h6" component="div" color="white" >
+        <Typography gutterBottom variant="inherit" component="div" color="white" >
           {Cardthought}
         </Typography>
-        <Typography variant="body2" color="white" >
+        <Typography variant="body1" color="white" >
           by {Cardtitle}
         </Typography>
       </CardContent>
