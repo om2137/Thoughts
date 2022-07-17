@@ -1,4 +1,4 @@
-# Thoughts : decentralized thoughts sharing platform
+# Thoughts : decentralized thoughts sharing platform (web3 project)
 
 ## Overview
 This is a very basic blockchain project, which is a short message(thought) sharing app. This is basically a decentralized twitter-like app, which takes users and allows them to share a short message which is publicly viewable.
