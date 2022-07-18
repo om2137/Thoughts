@@ -75,7 +75,7 @@ export default function Home() {
                
               <div className='flex w-full flex-col mx-auto'>
                 
-                <div className='border pb-6'>
+                <div className=' pb-6'>
                   <div className='flex flex-col  justify-top w-72 sm:w-96 break-all sm:ml-10' >
                   {
                     
@@ -86,21 +86,7 @@ export default function Home() {
                   }
                 </div>
                 </div>
-                {/* current loged in users content*/}
-                {
-                  thoughts.map( thought => (
-                    thought.authorName === user?.username ? (
-                      <div>
-                        <div className='flex flex-col justify-top w-72 sm:w-96 break-all sm:ml-10'>
-                          <MediaCard Cardtitle={"@ "+ thought.authorName +" "+ user?.username }  Cardthought={thought.content} />
-                        </div>
-                      </div>
-                    ):(
-                      <div></div>
-                    )
-                  ))
-                }
-                {/* current loged in users content end */}
+                
               </div>   
               </>
           ) }
