@@ -54,7 +54,6 @@ export default function Home() {
                       <div className=''>
                         <textarea 
                           className='mt-2 rounded resize-y w-72 h-20 pt-1 pl-2'
-                          maxLength="200"
                           placeholder='whats on your mind ' 
                           value={thoughtContent} 
                           onChange={e=>setThoughtContent(e.target.value)}
