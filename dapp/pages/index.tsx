@@ -8,7 +8,7 @@ import useThoughts from '../hooks/useThoughts'
 import MediaCard from '../components/Cards';
 
 export default function Home() {
-  const {connect, account, user, createUser, postThought, thoughts} = useThoughts();
+  const {connect, account, user, createUser, postThought, thoughts, } = useThoughts();
   //console.log(user);
   const [thoughtContent, setThoughtContent] = useState<string>('');
   return (
@@ -29,19 +29,22 @@ export default function Home() {
           {!account ? (
           <Button label = "Connect to Etherum" onClick={connect} />
           ) : 
+            //signup form
             account.toUpperCase() !== user?.wallet.toUpperCase() ? (
-              <SignUpForm />
+              <SignUpForm
+                title="Sign Up"
+              />
             ): (
               <>
-              <div className='flex w-full flex-col pb-4 px-auto'>
+              <div className='flex w-full flex-col  pb-4 px-auto'>
                 <div className=' flex item-center justify-center  w-120 '>
-                  <div>
+                  <div className='hidden sm:block'>
                     <img src={user?.avatar}  className="rounded-full mr-2 aspect-square" width="170" height="170"/>
                   </div>
                   
                   <div className='pl-3 '>
 
-                    <div className="item-center w-60">   
+                    <div className="item-center">   
                       <div>
                         <div className='justify-start'>
                           <h1 className='text-left text-2xl font-bold text-white'>{user?.name}</h1>
@@ -50,7 +53,7 @@ export default function Home() {
                       </div>
                       <div className=''>
                         <textarea 
-                          className='mt-2 rounded-xl border border-gray-600 w-60 pt-1 pl-2' 
+                          className='mt-2 rounded resize-y w-72 h-20 pt-1 pl-2'
                           placeholder='whats on your mind ' 
                           value={thoughtContent} 
                           onChange={e=>setThoughtContent(e.target.value)}
@@ -58,8 +61,8 @@ export default function Home() {
                       </div>           
                       
                     </div>  
-                    <div className='mt-1 flex justify-end w-60 pl-4'>
-                      <Button label='publish' onClick={() => postThought(user?.username +": "+ thoughtContent)}/>
+                    <div className='mt-1 flex justify-end w-72 pl-4'>
+                      <Button label='publish' onClick={() => postThought(thoughtContent)}/>
                     </div> 
                   </div>
                 </div>
@@ -68,17 +71,22 @@ export default function Home() {
               <div>
                 
               </div>
+               
               <div className='flex w-full flex-col mx-auto'>
-                <div className='flex flex-col justify-top ' >
+                
+                <div className=' pb-6'>
+                  <div className='flex flex-col  justify-top w-72 sm:w-96 break-all sm:ml-10' >
                   {
+                    
                     thoughts.map(thought => (  
-                      <MediaCard Cardtitle={"@ "+ thought.authorName} Cardthought={thought.content} />
+                      <MediaCard Cardtitle={"@ "+ thought.authorName }  Cardthought={thought.content} />
                         
                     ))
                   }
                 </div>
-              </div>  
+                </div>
                 
+              </div>   
               </>
           ) }
         </div>
@@ -90,7 +98,7 @@ export default function Home() {
           className="flex items-center justify-center gap-2"
           rel="noopener noreferrer"
         >
-          Powered by{' Etherum'}
+          Powered by{'Etherum'}
         </a>
       </footer>
     </div>

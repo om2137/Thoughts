@@ -26,6 +26,8 @@ contract Thoughts{
     mapping(address => string) public usernames;
     // username mapped to users (to store unique username)
     mapping(string => User) public users;
+    // thoughts mapped to users (to store unique thoughts)
+
 
     //signup function 
     function signup(string memory _username, string memory _name,string memory _bio,string memory _avatar) public {
