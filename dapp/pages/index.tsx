@@ -17,7 +17,7 @@ export default function Home() {
         <title>Thoughts</title>
       </Head>
       
-      <div className='flex item-top justify-top'>
+        <div className='flex item-top justify-top'>
           <h1 className=" text-6xl font-bold text-center text-white py-10">
             Welcome to <span className="text-red-400">Thoughts!</span>
           </h1>
@@ -38,8 +38,10 @@ export default function Home() {
               <>
               <div className='flex w-full flex-col  pb-4 px-auto'>
                 <div className=' flex item-center justify-center  w-120 '>
-                  <div className='hidden sm:block'>
+                  <div className='hidden sm:block ' >
+                    <a href='../profile'>
                     <img src={user?.avatar}  className="rounded-full mr-2 aspect-square" width="170" height="170"/>
+                    </a>
                   </div>
                   
                   <div className='pl-3 '>
