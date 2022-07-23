@@ -45,7 +45,11 @@ export default function Navbar({ title,name }: Props) {
           <nav className="flex items-center justify-between rounded-b-lg border-b border-gray-500 flex-between p-6 xl:p-10 bg-slate-800 text-white 3xl:px-20">
 
             <div className="flex items-center flex-shrink-0  mr-6">
-              <a className=" inline-block text-2xl text-red-400 rounded py-2 px-4  font-bold">{title}</a>
+              <a className=" inline-block text-2xl text-red-400 rounded py-2 px-4  font-bold"
+                href="../"
+              >
+                {title}
+              </a>
             </div>
 
             <div className='hidden md:flex '>

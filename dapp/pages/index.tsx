@@ -19,29 +19,43 @@ export default function Home() {
         <title>Thoughts</title>
       </Head>
       <header>
-        <Navbar
-          title='Thoughts'
-          name={user?.username}
-        />
+        {user?.username ? (
+            <Navbar
+            title='Thoughts'
+            name={user?.username}
+          />
+        ):null}
+        
       </header>
         
       <div className="flex min-h-screen flex-col items-center justify-center bg-gray-900">
-        <main className="flex w-full flex-1 flex-col items-center px-20 pt-6">
+        <main className="flex w-full flex-1 flex-col items-center justify-center  px-20 pt-6">
           
-          <div className='flex item-top justify-top'>
+          {/* <div className='flex item-top justify-top'>
             <h1 className=" text-6xl font-bold text-center text-white py-10">
               Welcome to <span className="text-red-400">Thoughts!</span>
             </h1>
-          </div>
+          </div> */}
           <div className='item-center justify-center'>
             {!account ? (
-            <Button label = "Connect to Etherum" onClick={connect} />
+              <div className='flex flex-col item-center my-auto'>
+                <h1 className=" text-6xl font-bold text-center text-white py-10">
+                  Welcome to <span className="text-red-400">Thoughts!</span>
+                </h1>
+                <div className='text-center'>
+                  <Button label = "Connect to Etherum" onClick={connect} />
+                </div>
+                
+              </div>
             ) : 
               //signup form
               account.toUpperCase() !== user?.wallet.toUpperCase() ? (
-                <SignUpForm
-                  title="Sign Up"
-                />
+                <div>
+                  <SignUpForm
+                    title="Sign Up"
+                  />
+                </div>
+                
               ): (
                 <>
                 <div className='flex w-full flex-col  pb-4 px-auto'>
