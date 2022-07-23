@@ -18,7 +18,7 @@ export default function Home() {
       <Head>
         <title>Thoughts</title>
       </Head>
-      <header>
+      <header className='bg-gray-900'>
         {user?.username ? (
             <Navbar
             title='Thoughts'
