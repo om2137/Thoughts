@@ -58,7 +58,7 @@ export default function Home() {
                 
               ): (
                 <>
-                <div className='flex w-full flex-col  pb-4 px-auto'>
+                <div className='flex w-full flex-col align-start pb-4 px-auto'>
                   <div className=' flex item-center justify-center  w-120 '>
                     <div className='hidden sm:block ' >
                       <a href='../profile'>
@@ -77,7 +77,8 @@ export default function Home() {
                         </div>
                         <div className=''>
                           <textarea 
-                            className='mt-2 rounded resize-y w-72 h-20 pt-1 pl-2'
+                            className='mt-2 rounded resize-none w-72 h-20 pt-1 pl-2'
+                            
                             placeholder='whats on your mind ' 
                             value={thoughtContent} 
                             onChange={e=>setThoughtContent(e.target.value)}
@@ -90,9 +91,6 @@ export default function Home() {
                       </div> 
                     </div>
                   </div>
-                  
-                </div>
-                <div>
                   
                 </div>
                 

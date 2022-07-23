@@ -99,8 +99,14 @@ export default function Navbar({ title,name }: Props) {
                     'aria-labelledby': 'basic-button',
                   }}
                 >
-                  <StyledMenuItem onClick={handleClose}  >Home</StyledMenuItem>
-                  <StyledMenuItem onClick={handleClose} >{name}</StyledMenuItem>
+                    <a href="..">
+                        <StyledMenuItem onClick={handleClose}  >Home</StyledMenuItem>
+                    </a>
+                  
+                  <a href="../profile">
+                    <StyledMenuItem onClick={handleClose} >{name}</StyledMenuItem>
+                  </a>
+                  
                 </Menu>
               
               
