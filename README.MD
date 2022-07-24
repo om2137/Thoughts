@@ -2,6 +2,7 @@
 
 ## Overview
 This is a very basic blockchain project, which is a short message(thought) sharing app. This is basically a decentralized twitter-like app, which takes users and allows them to share a short message which is publicly viewable.
+site overview: https://www.youtube.com/watch?v=BbcPDPcfD-8
 
 ## Components Used
 * Ethereum 
