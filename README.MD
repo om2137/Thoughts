@@ -15,7 +15,9 @@ site overview: https://www.youtube.com/watch?v=BbcPDPcfD-8
 * Tailwind.css
 
 ## Setup locally
-will be updated soon.
+Frok the project and clone it locally 
+Open the project in VSCode and run npm install
+...
 
 ## User flow
 * live on: https://thoughts-iota.vercel.app/ (deployed on rinkeby test network).
