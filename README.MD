@@ -20,7 +20,8 @@ Open the project in VSCode and run npm install
 ...
 
 ## User flow
-* live on: https://thoughts-iota.vercel.app/ (deployed on rinkeby test network).
+* live on: https://thoughts-iota.vercel.app/ (deployed on rinkeby test network). 
+Offline due to rinkeby network got deprecated
 ### Note: Choose rinkeby test network in metamask.
 
 1) User connect MetaMask to thoughts.
